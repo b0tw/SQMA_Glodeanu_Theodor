@@ -12,13 +12,13 @@ pipeline {
                 bat 'mvn test -Dgroups=${env.TEST}'
             }
         }
-        stage ('Print env variables') {
+        stage ('Homework 2: Print env variables') {
             steps {
                 bat 'mvn --version'
                 bat 'java --version'
             }
         }
-        stage ('Run all tests') {
+        stage ('Homework 2: Run all tests') {
             steps {
                 bat 'mvn test'
             }

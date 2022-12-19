@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SimpleClassTest {
-
-
     @Test
     @Tag("1")
     void shouldGetLowerCase() {
