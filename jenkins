@@ -1,7 +1,24 @@
 pipeline {
     agent any
     stages {
-        stage ('Build') {
+        stage ('Homework 1') {
+            steps {
+                script {
+                    env.TEST = input message: 'Please enter 1 or 2',
+                    parameters: [string(defaultValue: '1', description: '1 for first test, 2 for second test',
+                    name: 'Test')]
+                }
+                echo "Test: ${env.TEST}"
+                bat 'mvn test -Dgroups=${env.TEST}'
+            }
+        }
+        stage ('Print env variables') {
+            steps {
+                bat 'mvn --version'
+                bat 'java --version'
+            }
+        }
+        stage ('Run all tests') {
             steps {
                 bat 'mvn test'
             }
